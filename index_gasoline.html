@@ -1,0 +1,607 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Бензин 2026 | Нефтяное сердце России</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (Free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #0b1a2e;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* header */
+    .header {
+      background: linear-gradient(135deg, #101f33 0%, #1a2f49 100%);
+      color: white;
+      padding: 20px 0;
+      border-bottom: 3px solid #f5b342;
+    }
+
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-weight: 700;
+      font-size: 1.9rem;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: #f5b342;
+    }
+
+    .tagline {
+      font-weight: 500;
+      font-size: 0.95rem;
+      opacity: 0.85;
+      margin-top: 4px;
+    }
+
+    .header-stats {
+      display: flex;
+      gap: 30px;
+      background: rgba(255,255,255,0.06);
+      padding: 10px 24px;
+      border-radius: 60px;
+      backdrop-filter: blur(2px);
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-item .num {
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: #f5b342;
+    }
+
+    .stat-item .desc {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      opacity: 0.7;
+    }
+
+    /* hero */
+    .hero {
+      background: #0b1a2e;
+      color: white;
+      padding: 50px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(245,179,66,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hero-text {
+      flex: 1 1 55%;
+      min-width: 280px;
+    }
+
+    .hero-text .badge {
+      display: inline-block;
+      background: #f5b342;
+      color: #0b1a2e;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 6px 16px;
+      border-radius: 40px;
+      margin-bottom: 18px;
+      letter-spacing: 0.3px;
+    }
+
+    .hero-text h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+      max-width: 600px;
+      margin-bottom: 28px;
+    }
+
+    .hero-stats-mini {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats-mini div {
+      background: rgba(255,255,255,0.05);
+      padding: 8px 22px 8px 16px;
+      border-radius: 40px;
+      border-left: 4px solid #f5b342;
+      font-weight: 500;
+    }
+
+    .hero-stats-mini i {
+      color: #f5b342;
+      margin-right: 8px;
+    }
+
+    .hero-visual {
+      flex: 1 1 40%;
+      min-width: 240px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 10rem;
+      color: #f5b342;
+      opacity: 0.25;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    @media (max-width: 768px) {
+      .hero-text h2 { font-size: 2rem; }
+      .hero-visual { display: none; }
+      .header-stats { margin-top: 12px; }
+    }
+
+    /* sections common */
+    section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .section-title i {
+      color: #f5b342;
+      font-size: 2rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 28px;
+      padding: 28px 24px;
+      box-shadow: 0 20px 40px -12px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s;
+      border: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 50px -16px rgba(0,0,0,0.14);
+    }
+
+    .card-icon {
+      font-size: 2.6rem;
+      color: #f5b342;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .card p, .card li {
+      color: #1e2f43;
+      opacity: 0.85;
+      margin-bottom: 8px;
+    }
+
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .card ul li::before {
+      content: "▸ ";
+      color: #f5b342;
+      font-weight: 700;
+    }
+
+    .highlight {
+      background: #fef6e9;
+      border-left: 5px solid #f5b342;
+    }
+
+    .price-block {
+      background: #0f233a;
+      color: white;
+      border-radius: 40px;
+      padding: 40px 36px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin: 40px 0 20px;
+    }
+
+    .price-block .price-item {
+      text-align: center;
+      flex: 1 1 150px;
+    }
+
+    .price-block .price-label {
+      font-size: 1rem;
+      opacity: 0.7;
+    }
+
+    .price-block .price-value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #f5b342;
+    }
+
+    .price-block .price-value small {
+      font-size: 1rem;
+      font-weight: 400;
+      opacity: 0.6;
+      color: #ddd;
+    }
+
+    .note {
+      background: #eaf2fb;
+      border-radius: 30px;
+      padding: 14px 24px;
+      font-weight: 500;
+      margin-top: 16px;
+      display: inline-block;
+    }
+
+    .tip-box {
+      background: #e5f0fa;
+      border-radius: 28px;
+      padding: 30px 30px;
+      margin: 40px 0 10px;
+    }
+
+    .tip-box h3 {
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+    }
+
+    .tip-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .tip-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .tip-item i {
+      color: #f5b342;
+      font-size: 1.6rem;
+      min-width: 32px;
+    }
+
+    .tip-item p {
+      font-weight: 500;
+    }
+
+    .footer {
+      background: #0b1a2e;
+      color: rgba(255,255,255,0.7);
+      padding: 40px 0;
+      text-align: center;
+      border-top: 2px solid #f5b342;
+    }
+
+    .footer .logo-footer {
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .footer .logo-footer span {
+      color: #f5b342;
+    }
+
+    .footer small {
+      opacity: 0.7;
+    }
+
+    .badge-new {
+      background: #c02626;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 50px;
+      margin-left: 10px;
+      vertical-align: middle;
+      text-transform: uppercase;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #d0dce8, transparent);
+      margin: 30px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <h1>Бензин<span>2026</span></h1>
+        <div class="tagline">Нефтяное сердце России в эпоху перемен</div>
+      </div>
+      <div class="header-stats">
+        <div class="stat-item">
+          <div class="num">92<small style="font-size:0.9rem;">₽</small></div>
+          <div class="desc">АИ-92 средняя</div>
+        </div>
+        <div class="stat-item">
+          <div class="num">95<small style="font-size:0.9rem;">₽</small></div>
+          <div class="desc">АИ-95 средняя</div>
+        </div>
+        <div class="stat-item">
+          <div class="num">70%</div>
+          <div class="desc">GDI двигатели</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-text">
+        <div class="badge"><i class="fas fa-gas-pump"></i> 2026 — взгляд из будущего</div>
+        <h2>Как меняется рынок топлива, когда электрокары еще не победили, а нейросети управляют НПЗ</h2>
+        <p>Привет из 2026 года. Бензин в России — главный индикатор экономической стабильности. Разбираемся, что льют в баки, почему цена не падает и какое топливо заливать, чтобы мотор жил долго.</p>
+        <div class="hero-stats-mini">
+          <div><i class="fas fa-flask"></i> Евро-6</div>
+          <div><i class="fas fa-robot"></i> Нейросети на АЗС</div>
+          <div><i class="fas fa-leaf"></i> Е-10 био</div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <i class="fas fa-oil-can"></i>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- 1. Евро-6 -->
+    <section id="euro6">
+      <div class="section-title">
+        <i class="fas fa-microchip"></i> «Евро-6»: Цифровой стандарт, которого вы не видите
+      </div>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-sliders-h"></i></div>
+          <h3>Тихая эволюция</h3>
+          <p>Внедрение «Евро-6» прошло незаметно, как обновление прошивки. Содержание серы — менее 10 ppm, ужесточён контроль полициклических ароматических углеводородов. Новые присадки адаптированы под GDI-моторы (70% новых авто).</p>
+        </div>
+        <div class="card highlight">
+          <div class="card-icon"><i class="fas fa-vial"></i></div>
+          <h3>Химически точный коктейль</h3>
+          <p>Современный бензин — не просто смесь изомеров. Из-за удорожания катализаторов (платина, палладий) производители добавляют больше детергентов. Иначе форсунки забиваются уже к 30 000 км.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-tachometer-alt"></i></div>
+          <h3>Адаптация под турбину</h3>
+          <p>Бензин 2026 года учитывает высокие температуры и давление в современных двигателях. Новый пакет присадок предотвращает детонацию и отложения на впускных клапанах.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Рынок -->
+    <section id="market">
+      <div class="section-title">
+        <i class="fas fa-chart-pie"></i> Рынок: Парадокс «Серого» и «Зеленого»
+      </div>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-crown"></i></div>
+          <h3>«Большая тройка»</h3>
+          <p><strong>Газпром, Роснефть, ЛУКОЙЛ</strong> — эталон стабильности и строгого контроля. Дороже, но надёжно. Удерживают рынок за счёт госструктур и такси.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-wifi"></i></div>
+          <h3>Независимые сети</h3>
+          <p>ТТК, Газпромнефть, региональные сети — битва за лояльность. Кэшбэк, биометрия, <strong>«колонки с обратной связью»</strong>: нейросеть в стеле анализирует цвет топлива и блокирует отпуск при отклонении.</p>
+        </div>
+        <div class="card highlight">
+          <div class="card-icon"><i class="fas fa-skull"></i></div>
+          <h3>«Серый сектор»</h3>
+          <p>Жив, несмотря на блокчейн-прослеживаемость. Разница с качественным топливом — не детонация, а отложения на клапанах и разрушение катализатора. Экономия 5 руб./л → ремонт на 100 000₽.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Топливо будущего -->
+    <section id="future-fuel">
+      <div class="section-title">
+        <i class="fas fa-rocket"></i> Топливо будущего: АИ-100 и «Зеленый» бензин
+      </div>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-bolt"></i></div>
+          <h3>АИ-100 <span class="badge-new">100+</span></h3>
+          <p>Не маркетинг, а реальность для форсированных двигателей 400+ л.с. (Audi RS, Mercedes AMG, китайские гиперкары). Высокооктановые компоненты из установок изомеризации (c 2024).</p>
+        </div>
+        <div class="card highlight">
+          <div class="card-icon"><i class="fas fa-leaf"></i></div>
+          <h3>Биобензин Е-10</h3>
+          <p>С 2025 года разрешено 10% биоэтанола (зерно, древесная щепа). В южных регионах — на 3–4 рубля дешевле. Расход +2–3%, но мягкая работа и чистый выхлоп. Мороз не страшен — добавлены стабилизаторы.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-atom"></i></div>
+          <h3>e-fuel (синтетика)</h3>
+          <p>Первые опытно-промышленные установки: из CO₂ и водорода. Пока 300 руб./литр, но к 2027–2028 обещают прорыв. В 2026 — только болиды F1 на «Игоре Драйв» и частные коллекции.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Цена -->
+    <section id="price">
+      <div class="section-title">
+        <i class="fas fa-credit-card"></i> Цена: Почему бензин не дешевеет при дешевой нефти?
+      </div>
+      <div class="price-block">
+        <div class="price-item">
+          <div class="price-label">АИ-92</div>
+          <div class="price-value">55–60 <small>₽</small></div>
+        </div>
+        <div class="price-item">
+          <div class="price-label">АИ-95</div>
+          <div class="price-value">65–70 <small>₽</small></div>
+        </div>
+        <div class="price-item">
+          <div class="price-label">Urals</div>
+          <div class="price-value">$45–50 <small>/bbl</small></div>
+        </div>
+      </div>
+      <div class="card-grid" style="margin-top:10px;">
+        <div class="card">
+          <h3><i class="fas fa-shield-alt" style="color:#f5b342;"></i> Демпфер 2.0</h3>
+          <p>Государство поддерживает НПЗ, чтобы не уходили в минус, но цены резко не падают — иначе рубль «поплывёт».</p>
+        </div>
+        <div class="card">
+          <h3><i class="fas fa-truck"></i> Логистика</h3>
+          <p>Атаки дронов на НПЗ в 2024–2025 → миллиарды на страховку танкеров и резервные склады. Расходы зашиты в цену.</p>
+        </div>
+        <div class="card">
+          <h3><i class="fas fa-receipt"></i> Акцизы</h3>
+          <p>Индексация 2026 — +8% (как инфляция). Платим за дороги. Ручное управление Минэнерго: рост остановится на уровне инфляции.</p>
+        </div>
+      </div>
+      <div class="note">
+        <i class="fas fa-calendar-alt"></i> Прогноз осень 2026: резкого скачка не будет — Минэнерго увеличит нормативы поставок на биржу.
+      </div>
+    </section>
+
+    <!-- 5. Будущее: ДВС -->
+    <section id="future">
+      <div class="section-title">
+        <i class="fas fa-car-side"></i> Будущее: ДВС умрет, но бензин останется
+      </div>
+      <div class="card-grid">
+        <div class="card highlight" style="grid-column: span 2;">
+          <div style="display:flex; gap:20px; flex-wrap:wrap; align-items:center;">
+            <div style="font-size:3rem; color:#f5b342;"><i class="fas fa-battery-quarter"></i></div>
+            <div>
+              <h3 style="margin-bottom:6px;">Массовый переход на электромобили откладывается до 2030–2035</h3>
+              <p>Холодный климат, нехватка инфраструктуры, дешевизна бензина по сравнению с европейскими ценами. Бензин остаётся основой.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>⚡ Синтетическое топливо</h3>
+          <p>Многокомпонентный e-fuel из CO₂ и H₂. Первые установки работают, цена — 300₽/л. Прорыв ожидается к 2027–2028.</p>
+        </div>
+        <div class="card">
+          <h3>🏎️ Формула-1 и коллекции</h3>
+          <p>В 2026 синтетический бензин заливают только в болиды F1 и частные коллекции. Технология дозревает.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Резюме для водителя -->
+    <section id="tips">
+      <div class="tip-box">
+        <h3><i class="fas fa-list-check" style="color:#f5b342;"></i> Резюме для водителя 2026 года</h3>
+        <div class="tip-grid">
+          <div class="tip-item">
+            <i class="fas fa-check-circle"></i>
+            <p><strong>Заправляйтесь на брендовых сетях.</strong> Разница в 2–3 рубля не стоит убитого мотора.</p>
+          </div>
+          <div class="tip-item">
+            <i class="fas fa-check-circle"></i>
+            <p><strong>Пробуйте АИ-100</strong> если мотор турбированный и мощнее 200 сил — отклик на газ станет ярче.</p>
+          </div>
+          <div class="tip-item">
+            <i class="fas fa-check-circle"></i>
+            <p><strong>Следите за Е-10.</strong> Если цена упадёт на 5–7₽, а машина не боится этанола — это выгодно.</p>
+          </div>
+          <div class="tip-item">
+            <i class="fas fa-check-circle"></i>
+            <p><strong>Не ждите дешевого бензина.</strong> Он закончился в 2020-м.</p>
+          </div>
+        </div>
+      </div>
+      <div style="background: #0b1a2e; color:white; padding: 32px 32px; border-radius: 40px; margin: 30px 0 50px;">
+        <p style="font-size:1.3rem; font-weight:600; margin-bottom:12px;">✅ Итог: Бензин в России 2026 года стал чище, технологичнее и сложнее.</p>
+        <p style="opacity:0.8;">Он уже не просто «горючка», а высокотехнологичный продукт, за который мы платим не только тонны нефти, но и цифровые налоги, и безопасность отрасли. Заправляйтесь с умом, и пусть ваш мотор работает как часы!</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="logo-footer">Бензин<span>2026</span></div>
+      <p style="margin: 8px 0 4px;">Нефтяное сердце России в эпоху перемен</p>
+      <small>© 2026 — взгляд из будущего. Данные аналитики рынка топлива.</small>
+    </div>
+  </footer>
+</body>
+</html>
